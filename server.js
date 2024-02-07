@@ -10,9 +10,10 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
     console.log("ERROR:", err);
   } else {
-    user = JSON.parsel(data);
+    user = JSON.parse(data);
   }
 });
+
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
