@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 // 2: Session kodlar
 // 3Views kodlar
 
-app.set("views", "viewws");
+app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4: Routing kodlar
