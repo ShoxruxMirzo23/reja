@@ -1,3 +1,15 @@
+//Task A
+function countLetter(letter, word) {
+  let count = 0;
+  for (let i = 0; i < word.length; i++) {
+    if (word[i] === letter) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countLetter("e", "engineer")); // 3 ni qaytaradi
+/*
 console.log("Jack Ma maslahatlari");
 const list = [
   "yahshi talaba boling", // 0-20
@@ -68,3 +80,4 @@ console.log("passed here 1");
 //  console.log(javob);
 //}
 //run();
+*/
