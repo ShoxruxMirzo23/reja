@@ -1,14 +1,31 @@
-//Task A
-function countLetter(letter, word) {
-  let count = 0;
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === letter) {
-      count++;
+//TASK B
+const countDigits = (data) => {
+  let arr = [];
+  let changeArr = data.split("");
+  for (i = 0; i < changeArr.length; i++) {
+    if (!isNaN(changeArr[i])) {
+      arr.push(changeArr[i]);
     }
   }
-  return count;
-}
-console.log(countLetter("e", "engineer")); // 3 ni qaytaradi
+
+  return arr.length;
+};
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+//result = countDigits("ad2a54y79wet0sfgb9")
+//print(result)  # 7 ni chiqaradi
+
+//Task A
+//function countLetter(letter, word) {
+//  let count = 0;
+//  for (let i = 0; i < word.length; i++) {
+//    if (word[i] === letter) {
+//      count++;
+//    }
+//  }
+//  return count;
+//}
+//console.log(countLetter("e", "engineer")); // 3 ni qaytaradi
+
 /*
 console.log("Jack Ma maslahatlari");
 const list = [

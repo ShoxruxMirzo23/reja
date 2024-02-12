@@ -18,11 +18,31 @@ app.set("view engine", "ejs");
 
 // 4: Routing kodlar
 app.post("/create-item", (req, res) => {
-  //TODO:code with db here
+  console.log("user enetered /created-item");
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("something went wrong");
+    } else {
+      res.end("successfully added");
+    }
+  });
 });
 
 app.get("/", function (req, res) {
-  res.render("reja");
+  console.log("user enetered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("something went wrong");
+      } else {
+        console.log(data);
+        res.render("reja", { items: data });
+      }
+    });
 });
 
 module.exports = app;
