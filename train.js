@@ -1,16 +1,58 @@
-//TASK B
-const countDigits = (data) => {
-  let arr = [];
-  let changeArr = data.split("");
-  for (i = 0; i < changeArr.length; i++) {
-    if (!isNaN(changeArr[i])) {
-      arr.push(changeArr[i]);
+//Task D
+class Shop {
+  constructor(breadCount, lemonCount, colaCount) {
+    this.products = {
+      bread: breadCount,
+      lemon: lemonCount,
+      cola: colaCount,
+    };
+  }
+
+  remaining() {
+    console.log(`Remaining products at ${new Date().toLocaleTimeString()}:`);
+    for (const [product, count] of Object.entries(this.products)) {
+      console.log(`${count} ${product}s`);
     }
   }
 
-  return arr.length;
-};
-console.log(countDigits("ad2a54y79wet0sfgb9"));
+  sell(product, quantity) {
+    console.log(
+      `Selling ${quantity} ${product}s at ${new Date().toLocaleTimeString()}`
+    );
+    if (this.products[product] >= quantity) {
+      this.products[product] -= quantity;
+    } else {
+      console.log(`Not enough ${product}s available for sale.`);
+    }
+  }
+
+  accept(product, quantity) {
+    console.log(
+      `Accepting ${quantity} ${product}s at ${new Date().toLocaleTimeString()}`
+    );
+    this.products[product] += quantity;
+  }
+}
+
+const shop = new Shop(4, 5, 2);
+shop.remaining();
+shop.sell("bread", 3);
+shop.accept("cola", 4);
+shop.remaining();
+
+//TASK B
+//const countDigits = (data) => {
+//  let arr = [];
+//  let changeArr = data.split("");
+//  for (i = 0; i < changeArr.length; i++) {
+//    if (!isNaN(changeArr[i])) {
+//      arr.push(changeArr[i]);
+//    }
+//  }
+
+//  return arr.length;
+// };
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
 //result = countDigits("ad2a54y79wet0sfgb9")
 //print(result)  # 7 ni chiqaradi
 
