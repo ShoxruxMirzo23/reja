@@ -1,45 +1,49 @@
-const { response } = require("../app");
+//const { response } = require("../app");
 
 console.log("FrontEnd js ishga tushdi");
 
 function itemTemplate(item) {
-  return `<
-    class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
-    <span class="item-text">${item.reja}</span>
-    <div>
-      <button
-       data-id="${item._id}" 
-       class="edit-me btn btn-secondary btn-sm mr-1">
-       Ozgartirish
-     </button>
-     <button
-      data-id="${item._id}" 
-      class="delete-me btn btn-danger btn-sm">
-      Ochirish
-      </button>
- </div>
- </li>`;
+  return `
+  <li
+          class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
+        >
+          <span class="item-text"> ${item.reja} </span>
+          <div>
+            <button
+              data-id=" ${item._id}"
+              class="edit-me btn btn-secondary btn-sm mr-1"
+            >
+              Ozgartirish
+            </button>
+            <button
+              data-id=" ${item._id}"
+              class="delete-me btn btn-danger btn-sm"
+              style="border-radius: 20px"
+            >
+              Ochirish
+            </button>
+          </div>
+        </li>
+ `;
 }
 
 let createField = document.getElementById("create-field");
-document
-  .getElementsById("create-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
+document.getElementById("create-form").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    axios
-      .post("/create-item", { reja: createField.value })
-      .then((response) => {
-        document
-          .getElementById("item-list")
-          .insertAdjacentHTML("beforeend", itemTemplate(response.data));
-        createField.value = "";
-        createField.focus();
-      })
-      .catch((err) => {
-        console.log("Iltimos qaytadan harakat qiling");
-      });
-  });
+  axios
+    .post("/create-item", { reja: createField.value })
+    .then((response) => {
+      document
+        .getElementById("item-list")
+        .insertAdjacentHTML("beforeend", itemTemplate(response.data));
+      createField.value = "";
+      createField.focus();
+    })
+    .catch((err) => {
+      console.log("Iltimos qaytadan harakat qiling");
+    });
+});
 document.addEventListener("click", function (e) {
   // delete oper
   if (e.target.classList.contains("delete-me")) {
@@ -55,18 +59,15 @@ document.addEventListener("click", function (e) {
   }
 
   // edit oper
+
   if (e.target.classList.contains("edit-me")) {
-    //alert("siz edit tugmasini bosdingiz");
     let userInput = prompt(
-      "Ozgartirish kiriting",
-      e.target.parentElement.parentElement.queryElement.querySelector(
-        ".item-text"
-      ).innerHTML
+      "Ozgartirish kiriting!",
+      e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
     );
     if (userInput) {
-      //console.log(userInput);
       axios
-        .post("/edit-irem", {
+        .post("/edit-item", {
           id: e.target.getAttribute("data-id"),
           new_input: userInput,
         })
@@ -77,14 +78,20 @@ document.addEventListener("click", function (e) {
           ).innerHTML = userInput;
         })
         .catch((err) => {
-          console.log("Iltimos qaytadan harakat qiling!");
+          console.log("Iltimos qaytadan harakat qilib koring!");
         });
     }
   }
 });
+
 document.getElementById("clean-all").addEventListener("click", function () {
-  axios.post("/delete-all", { delete_all: true }).then((respose) => {
-    alert(respose.data.state);
-    document.location.reload();
-  });
+  axios
+    .post("/delete-all", { delete_all: true })
+    .then((response) => {
+      alert(response.data.state);
+      document.location.reload();
+    })
+    .catch((err) => {
+      console.log("Iltimos qaytadan harakat qilib koring!");
+    });
 });

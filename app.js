@@ -4,7 +4,7 @@ const app = express();
 
 // MongoDB chaqirish:
 const db = require("./server").db();
-const mongodb = require("mongodb");
+const mongoDB = require("mongodb");
 
 //1 enter code
 app.use(express.static("public"));
@@ -31,7 +31,7 @@ app.post("/create-item", (req, res) => {
 app.post("/delete-item", (req, res) => {
   const id = req.body.id;
   db.collection("plans").deleteOne(
-    { _id: new mongodb.ObjectId(id) },
+    { _id: new mongoDB.ObjectId(id) },
     function (err, data) {
       res.json({ state: "success" });
     }
@@ -41,9 +41,9 @@ app.post("/delete-item", (req, res) => {
 app.post("/edit-item", (req, res) => {
   const data = req.body;
   console.log(data);
-  db.collection("plans").findOneAndupdate(
+  db.collection("plans").findOneAndUpdate(
     {
-      _id: new mongodb.ObjectId(data.id),
+      _id: new mongoDB.ObjectId(data.id),
     },
     { $set: { reja: data.new_input } },
     function (err, data) {
@@ -54,26 +54,8 @@ app.post("/edit-item", (req, res) => {
 });
 ///// edit
 
-app.post("/edit-item", (req, res) => {
-  const data = req.body;
-  db.collection("plans").findOneAndUpdate(
-    { _id: new mongodb.ObjectId(data.id) },
-    { $set: { reja: data.new_input } },
-    function (err, data) {
-      res.json({ state: "success" });
-    }
-  );
-});
-
 /// delete all
 
-app.post("/delete-all", (req, res) => {
-  if (req.body.delete_all) {
-    db.collection("plans").deleteMany(function () {
-      res.json({ state: "all deleted" });
-    });
-  }
-});
 app.post("/delete-all", (req, res) => {
   if (req.body.delete_all) {
     db.collection("plans").deleteMany(function () {
