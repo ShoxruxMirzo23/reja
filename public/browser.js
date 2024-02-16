@@ -56,6 +56,10 @@ document.addEventListener("click", function (e) {
 
   // edit oper
   if (e.target.classList.contains("edit-me")) {
-    alert("siz edit tugmasini bosdingiz");
+    //alert("siz edit tugmasini bosdingiz");
+    let userInput = prompt("Ozgartirish kiriting", e.target);
+    if (userInput) {
+      console.log(userInput);
+    }
   }
 });

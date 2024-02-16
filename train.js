@@ -1,5 +1,17 @@
 //Task D
-class Shop {
+{
+  const arr1 = str1.split("");
+  const arr2 = str2.split("");
+
+  const sorted1 = arr1.sort().join("");
+  const sorted2 = arr2.sort().join("");
+
+  return sorted1 === sorted2;
+}
+
+console.log(checkContent("mitgroup", "gmtiprou"));
+//Task C
+/* class Shop {
   constructor(breadCount, lemonCount, colaCount) {
     this.products = {
       bread: breadCount,
@@ -39,7 +51,7 @@ shop.remaining();
 shop.sell("bread", 3);
 shop.accept("cola", 4);
 shop.remaining();
-
+/*
 //TASK B
 //const countDigits = (data) => {
 //  let arr = [];
