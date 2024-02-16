@@ -1,6 +1,4 @@
-//const { response } = require("../app");
-
-console.log("FrontEnd js ishga tushdi");
+console.log("frontend JS ishga tushdi!");
 
 function itemTemplate(item) {
   return `
@@ -10,24 +8,26 @@ function itemTemplate(item) {
           <span class="item-text"> ${item.reja} </span>
           <div>
             <button
-              data-id=" ${item._id}"
+              data-id=" ${item._id} "
               class="edit-me btn btn-secondary btn-sm mr-1"
             >
               Ozgartirish
             </button>
             <button
-              data-id=" ${item._id}"
-              class="delete-me btn btn-danger btn-sm"
+              data-id=" ${item._id} "
+              id="clean-all"
+              class="btn btn-danger btn-sm"
               style="border-radius: 20px"
             >
               Ochirish
             </button>
           </div>
         </li>
- `;
+  `;
 }
 
 let createField = document.getElementById("create-field");
+
 document.getElementById("create-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -41,25 +41,27 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
       createField.focus();
     })
     .catch((err) => {
-      console.log("Iltimos qaytadan harakat qiling");
+      console.log("Iltimos qaytadan harakat qilib koring!", err);
     });
 });
+
 document.addEventListener("click", function (e) {
-  // delete oper
+  // delete operations
   if (e.target.classList.contains("delete-me")) {
-    if (confirm("Aniq ochirmoqchimisiz?")) {
+    if (confirm("Aniq ochirmoqchimsz?")) {
       axios
         .post("/delete-item", { id: e.target.getAttribute("data-id") })
-        .then((respose) => {
-          console.log(respose.data);
+        .then((response) => {
+          console.log(response.data);
           e.target.parentElement.parentElement.remove();
         })
-        .catch((err) => {});
+        .catch((err) => {
+          conso.log("Iltimos qaytadan harakat qilib koring!", err);
+        });
     }
   }
 
-  // edit oper
-
+  // edit operations
   if (e.target.classList.contains("edit-me")) {
     let userInput = prompt(
       "Ozgartirish kiriting!",
@@ -84,6 +86,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// Clean all button
 document.getElementById("clean-all").addEventListener("click", function () {
   axios
     .post("/delete-all", { delete_all: true })

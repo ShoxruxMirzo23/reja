@@ -1,5 +1,5 @@
 //Task D
-{
+function checkContent(str1, str2) {
   const arr1 = str1.split("");
   const arr2 = str2.split("");
 
