@@ -4,42 +4,315 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <title>Portfolio</title>
-  </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/js/bootstrap.min.js"></script>
 
+    <title>REJA</title>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
   <body>
     <div class="frame">
-      <div class="main frame">
+      <div class="main_frame">
         <div class="left_frame">
           <div class="left_1">
-            <div class="left_1-1">
-              <img
-                src="images/profile.png"
-                width="156px"
-                height="142px"
-                alt=""
-              />
+            <div class="left_1_img_container">
+              <img src="images/Profile.png" width="156" height="142" alt="" />
             </div>
-            <div class="left_1-2"><%=user.name%></div>
-            <div class="left_1-3"><%=user.profession%></div>
-            <div class="left-icons"></div>
+            <div class="left_1_name_container"><%=user.name%></div>
+
+            <div class="left_1_job_container"><%=user.profession%></div>
+            <div class="left_1_icon_container">
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Facebook.png" class="icon-1" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Instagram.png" class="icon-1" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Youtube.png" class="icon-1" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Linkeding.png" class="icon-1" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Twitter.png" class="icon-1" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Dribbble.png" class="icon-1" alt="" />
+                </div>
+              </a>
+            </div>
           </div>
           <div class="marginer"></div>
-          <div class="left_2"></div>
+
+          <div class="left_2">
+            <div class="age_info">
+              <div class="age">Age:</div>
+              <div class="age_num">27</div>
+            </div>
+
+            <div class="res_info">
+              <div class="residence">Residence:</div>
+              <div class="res_area">UZ</div>
+            </div>
+
+            <div class="freelance_info">
+              <div class="freelance">Developer:</div>
+              <div class="freelance_txt">Availabe</div>
+            </div>
+
+            <div class="address_info">
+              <div class="address">Address:</div>
+              <div class="address_txt">Tashkent,Uzbekistan</div>
+            </div>
+          </div>
           <div class="marginer"></div>
-          <div class="left_3"></div>
+
+          <div class="left_3">
+            <div class="lang_title">Languages</div>
+
+            <div class="lang_container">
+              <div class="lang_txt">Uzbek</div>
+              <div class="lang_txt">100%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar"></div>
+            </div>
+
+            <div class="lang_container">
+              <div class="lang_txt">English</div>
+              <div class="lang_txt">80%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar_2"></div>
+            </div>
+
+            <div class="lang_container">
+              <div class="lang_txt">Korean</div>
+              <div class="lang_txt">70%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar_3"></div>
+            </div>
+          </div>
           <div class="marginer"></div>
-          <div class="left_4"></div>
+
+          <div class="left_4">
+            <div class="lang_title">Skills</div>
+
+            <div class="lang_container">
+              <div class="lang_txt">HTML</div>
+              <div class="lang_txt">90%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar_4"></div>
+            </div>
+
+            <div class="lang_container">
+              <div class="lang_txt">CSS</div>
+              <div class="lang_txt">90%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar_5"></div>
+            </div>
+
+            <div class="lang_container">
+              <div class="lang_txt">JS</div>
+              <div class="lang_txt">80%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar_6"></div>
+            </div>
+            <div class="lang_container">
+              <div class="lang_txt">PHP</div>
+              <div class="lang_txt">75%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar_7"></div>
+            </div>
+            <div class="lang_container">
+              <div class="lang_txt">WordPress</div>
+              <div class="lang_txt">70%</div>
+            </div>
+            <div class="percantge_bar_container">
+              <div class="percantge_bar_8"></div>
+            </div>
+          </div>
           <div class="marginer"></div>
-          <div class="left_5"></div>
+
+          <div class="left_5">
+            <div class="lang_title">Extra Skills</div>
+            <div class="extra_skill_container">
+              <img src="icon/Icons.svg" alt="" height="15px" width="15px" />
+              <div class="skill_txt">Bootstrap, Materialize</div>
+            </div>
+            <div class="extra_skill_container">
+              <img src="icon/Icons.svg" alt="" height="15px" width="15px" />
+              <div class="skill_txt">Sass,Less</div>
+            </div>
+            <div class="extra_skill_container">
+              <img src="icon/Icons.svg" alt="" height="15px" width="15px" />
+              <div class="skill_txt">Webpack, Gulp, Grunt</div>
+            </div>
+            <div class="extra_skill_container">
+              <img src="icon/Icons.svg" alt="" height="15px" width="15px" />
+              <div class="skill_txt">GIT Knowledge</div>
+            </div>
+          </div>
           <div class="marginer"></div>
         </div>
-        <div class="midd_frame"></div>
-        <div class="right_frame"></div>
+
+        <div class="midd_frame">
+          <div class="about_container">
+            <div class="text_container">
+              <div class="job_tile">Doctor neurologists in OHSU Hospital</div>
+              <div class="job_description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+                volutpat feugiat placerat lobortis. Natoque rutrum semper sed
+                suspendisse nunc lectus.
+              </div>
+
+              <button class="hire_me_btn">HIRE ME →</button>
+            </div>
+            <img src="images/profile2.svg" alt="" class="profile1" />
+          </div>
+
+          <div class="my_service_container">
+            <div class="my_service_title">My services</div>
+            <div class="my_service_txt">
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+              amet sint. Velit officia consequat duis enim velit mollit. lorem
+              ipsum
+            </div>
+          </div>
+
+          <div class="mid_frame_skill_container">
+            <div class="mid_frame_skill_box">
+              <img src="icon/coding.png" alt="" class="mid_frame_skill_icon1" />
+              <div class="mid_frame_skill_title">Web Devolopment</div>
+              <div class="mid_frame_skill_txt">Blog, E-Commerce</div>
+            </div>
+
+            <div class="mid_frame_skill_box">
+              <img
+                src="icon/illustration.svg"
+                alt=""
+                class="mid_frame_skill_icon1"
+              />
+              <div class="mid_frame_skill_title">UI/UX design</div>
+              <div class="mid_frame_skill_txt">Mobile app, website design</div>
+            </div>
+
+            <div class="mid_frame_skill_box">
+              <img
+                src="icon/Microphone.png"
+                alt=""
+                class="mid_frame_skill_icon1"
+              />
+              <div class="mid_frame_skill_title">Sound design</div>
+              <div class="mid_frame_skill_txt">Voice Over, Beat Making</div>
+            </div>
+          </div>
+
+          <div class="mid_frame_skill_container">
+            <div class="mid_frame_skill_box">
+              <img
+                src="icon/game-development.png"
+                alt=""
+                class="mid_frame_skill_icon1"
+              />
+              <div class="mid_frame_skill_title">Game design</div>
+              <div class="mid_frame_skill_txt">
+                Character Design, Props & Objects
+              </div>
+            </div>
+
+            <div class="mid_frame_skill_box">
+              <img
+                src="icon/Photographer.png"
+                alt=""
+                class="mid_frame_skill_icon1"
+              />
+              <div class="mid_frame_skill_title">Photography</div>
+              <div class="mid_frame_skill_txt">
+                Portrait, Product Photography
+              </div>
+            </div>
+
+            <div class="mid_frame_skill_box">
+              <div class="mid_frame_skill_txt1">Advertising</div>
+              <div class="mid_frame_skill_title1">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                nulla diam in ac dictum a urna viverra morbi.
+              </div>
+              <div class="mid_frame_skill_btn">ORDER NOW</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right_frame">
+          <a class="link_href" href="">
+            <div class="icon-4">
+              <img src="btn_icon/Contrast.png" class="icon-2" alt="" />
+            </div>
+          </a>
+
+          <div class="right_frame_btn_container">
+            <!-- <a class="link_href" href="">
+              <div class="icon-4">
+                <img src="btn_icon/Home (1).png" alt="" />
+              </div>
+            </a> -->
+            <a class="link_href" href="">
+              <div class="icon-4">
+                <img src="btn_icon/Home.png" alt="" />
+              </div>
+            </a>
+
+            <a class="link_href" href="">
+              <div class="icon-4">
+                <img src="btn_icon/Service.png" alt="" />
+              </div>
+            </a>
+
+            <a class="link_href" href="">
+              <div class="icon-4">
+                <img src="btn_icon/CV.png" alt="" />
+              </div>
+            </a>
+
+            <a class="link_href" href="">
+              <div class="icon-4">
+                <img src="btn_icon/Portfolio.png" alt="" />
+              </div>
+            </a>
+
+            <a class="link_href" href="">
+              <div class="icon-4">
+                <img src="btn_icon/Blog.png" alt="" />
+              </div>
+            </a>
+
+            <a class="link_href" href="">
+              <div class="icon-4">
+                <img src="btn_icon/Contact.png" alt="" />
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </body>
