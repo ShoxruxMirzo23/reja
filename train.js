@@ -1,15 +1,22 @@
-//Task D
-function checkContent(str1, str2) {
-  const arr1 = str1.split("");
-  const arr2 = str2.split("");
+//Task E
+const getReverse = (string) => {
+  return string.split("").reverse().join("");
+};
 
-  const sorted1 = arr1.sort().join("");
-  const sorted2 = arr2.sort().join("");
+console.log(getReverse("hello")); //
 
-  return sorted1 === sorted2;
-}
+// //Task D
+// function checkContent(str1, str2) {
+//   const arr1 = str1.split("");
+//   const arr2 = str2.split("");
 
-console.log(checkContent("mitgroup", "gmtiprou"));
+//   const sorted1 = arr1.sort().join("");
+//   const sorted2 = arr2.sort().join("");
+
+//   return sorted1 === sorted2;
+// }
+// console.log(checkContent("mitgroup", "gmtiprou"));
+
 //Task C
 /* class Shop {
   constructor(breadCount, lemonCount, colaCount) {
