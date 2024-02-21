@@ -1,9 +1,23 @@
-//Task E
-const getReverse = (string) => {
-  return string.split("").reverse().join("");
-};
+//Task F
+function findDoublers(str) {
+  let doubles = [];
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (doubles.includes(char)) {
+      return true;
+    } else {
+      doubles.push(char);
+    }
+  }
+  return false;
+}
 
-console.log(getReverse("hello")); //
+console.log(findDoublers("python"));
+//Task E
+// const getReverse = (string) => {
+//   return string.split("").reverse().join("");
+// };
+// console.log(getReverse("hello"));
 
 // //Task D
 // function checkContent(str1, str2) {
